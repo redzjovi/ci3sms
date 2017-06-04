@@ -2,6 +2,7 @@
 <?php $this->load->view('backend/_layouts/top_menu'); ?>
 
 <div id="page-wrapper">
+    <?php $this->load->view('backend/_partials/messages'); ?>
     <div class="row">
         <div class="col-sm-12">
             <h1 class="page-header">Index</h1>

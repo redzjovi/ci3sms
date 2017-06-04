@@ -9,7 +9,7 @@ class Admin extends CI_Controller
 
     public function index()
     {
-        $this->login_library->is_guest();
+        $this->login_library->is_guest(true);
         $this->load->view('backend/admin/index');
     }
 
@@ -20,15 +20,12 @@ class Admin extends CI_Controller
         $this->form_validation->set_rules('login', lang('login'), 'callback_login_check');
 
         if ($this->form_validation->run() === true) {
-            $data['admin'] = $this->db->from($this->Admin_Model->table)
-                ->where('username', $this->input->post('username'))
-                ->get()
-                ->row_array();
+            $data['admin'] = $this->db->from($this->Admin_Model->table)->where('username', $this->input->post('username'))->get()->row_array();
 
             $this->session->set_userdata($data);
             redirect('backend/admin');
         }
-
+        
         $this->load->view('backend/admin/login');
     }
 
