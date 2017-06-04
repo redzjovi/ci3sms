@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2017 at 07:08 AM
+-- Generation Time: Jun 04, 2017 at 08:06 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ci3sms`
+-- Database: `codeigniter3sms`
 --
 
 -- --------------------------------------------------------
