@@ -30,10 +30,10 @@
                         <?= form_open(); ?>
                             <fieldset>
                                 <div class="form-group">
-                                    <?= form_input('username', set_value('username'), ['autofocus' => true, 'class' => 'form-control', 'placeholder' => lang('admin_username')]); ?>
+                                    <?= form_input('username', set_value('username', 'admin'), ['autofocus' => true, 'class' => 'form-control', 'placeholder' => lang('admin_username')]); ?>
                                 </div>
                                 <div class="form-group">
-                                    <?= form_password('password', set_value('password'), ['class' => 'form-control', 'placeholder' => lang('admin_password')]); ?>
+                                    <?= form_password('password', set_value('password', 'admin'), ['class' => 'form-control', 'placeholder' => lang('admin_password')]); ?>
                                 </div>
                                 <?= form_submit('login', ucfirst(lang('login')), ['class' => 'btn btn-success btn-block']); ?>
                             </fieldset>
