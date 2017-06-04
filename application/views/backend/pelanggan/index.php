@@ -5,7 +5,7 @@
     <?php $this->load->view('backend/_partials/messages'); ?>
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="page-header"><?= ucfirst(lang('pelanggan')); ?></h1>
+            <h1 class="page-header"><?= ucfirst(lang('customer')); ?></h1>
         </div>
     </div>
     <div class="row">
@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-default">
-                <div class="panel-heading"><?= ucfirst(lang('pelanggan')); ?></div>
+                <div class="panel-heading"><?= ucfirst(lang('customer')); ?></div>
                 <div class="panel-body">
                     <table class="table table-bordered table-hover table-striped" id="table" width="100%">
                         <thead>

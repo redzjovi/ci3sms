@@ -5,14 +5,14 @@
     <?php $this->load->view('backend/_partials/messages'); ?>
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="page-header"><?= ucfirst(lang('edit')).' '.lang('pelanggan'); ?></h1>
+            <h1 class="page-header"><?= ucfirst(lang('edit')).' '.lang('customer'); ?></h1>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
             <?= form_open(); ?>
             <div class="panel panel-default">
-                <div class="panel-heading"><?= ucfirst(lang('edit')).' '.lang('pelanggan'); ?></div>
+                <div class="panel-heading"><?= ucfirst(lang('edit')).' '.lang('customer'); ?></div>
                 <div class="panel-body">
                     <div class="form-group">
                         <?= form_label(ucfirst(lang('name')).' (*)'); ?>
