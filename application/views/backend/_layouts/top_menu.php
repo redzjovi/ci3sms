@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+        <a class="navbar-brand" href="<?= site_url('backend/admin'); ?>">SB Admin v2.0</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -30,7 +30,7 @@
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
-                    <a href="<?= site_url('backend/dashboard'); ?>"><i class="fa fa-dashboard"></i> <?= ucfirst(lang('dashboard')); ?></a>
+                    <a href="<?= site_url('backend/admin'); ?>"><i class="fa fa-dashboard"></i> <?= ucfirst(lang('dashboard')); ?></a>
                 </li>
                 <li>
                     <a href="<?= site_url('backend/pelanggan'); ?>"><i class="fa fa-users"></i> <?= ucfirst(lang('pelanggan')); ?></a>
