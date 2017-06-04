@@ -44,4 +44,10 @@ class Admin extends CI_Controller
 
         return true;
     }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('admin');
+        redirect('backend/admin');
+    }
 }
