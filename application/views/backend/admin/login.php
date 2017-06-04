@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login</title>
+    <title><?= ucfirst(lang('login')); ?></title>
 
     <link href="<?= base_url('assets/bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/startbootstrap-sb-admin-2-gh-pages/dist/css/sb-admin-2.css'); ?>" rel="stylesheet">
@@ -24,18 +24,18 @@
                 <div class="login-panel panel panel-default">
                     <?php $this->load->view('backend/_partials/messages'); ?>
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <h3 class="panel-title"><?= ucfirst(lang('please')).' '.lang('sign_in'); ?></h3>
                     </div>
                     <div class="panel-body">
                         <?= form_open(); ?>
                             <fieldset>
                                 <div class="form-group">
-                                    <?= form_input('email', set_value('email'), ['autofocus' => true, 'class' => 'form-control', 'placeholder' => 'E-mail']); ?>
+                                    <?= form_input('username', set_value('username'), ['autofocus' => true, 'class' => 'form-control', 'placeholder' => lang('admin_username')]); ?>
                                 </div>
                                 <div class="form-group">
-                                    <?= form_input('password', set_value('password'), ['autofocus' => true, 'class' => 'form-control', 'placeholder' => 'Password']); ?>
+                                    <?= form_password('password', set_value('password'), ['class' => 'form-control', 'placeholder' => lang('admin_password')]); ?>
                                 </div>
-                                <?= form_submit('login', 'Login', ['class' => 'btn btn-success btn-block']); ?>
+                                <?= form_submit('login', ucfirst(lang('login')), ['class' => 'btn btn-success btn-block']); ?>
                             </fieldset>
                         <?= form_close(); ?>
                     </div>
@@ -43,7 +43,6 @@
             </div>
         </div>
     </div>
-
 
     <script src="<?= base_url('assets/jquery/dist/jquery.min.js'); ?>"></script>
     <script src="<?= base_url('assets/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>

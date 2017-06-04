@@ -6,7 +6,7 @@ class Login_Library
     public function is_guest()
     {
         $this->CI =& get_instance();
-        if ($this->CI->session->has_userdata('user')) {
+        if ($this->CI->session->has_userdata('admin')) {
 
         } else {
             redirect('backend/admin/login');
