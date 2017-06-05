@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2017 at 08:09 AM
+-- Generation Time: Jun 05, 2017 at 09:09 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -155,7 +155,7 @@ CREATE TABLE `pengaturan` (
 --
 
 INSERT INTO `pengaturan` (`id`, `tipe`, `pesan`, `jatuh_tempo`) VALUES
-(1, 'peringatan_pembayaran', 'Kepada Bpk {nama},\n\nBatas waktu pembayaran tinggal {jumlah_hari} lagi. Segera bayar sebelum {tanggal_jatuh_tempo}.\n\nTerima kasih.', 30);
+(1, 'peringatan_pembayaran', 'Kepada Bpk {nama}, \r\n\r\nBatas waktu pembayaran tinggal {jumlah_hari} lagi.\r\nSegera bayar sebelum {tanggal_jatuh_tempo}.\r\n\r\nTerima kasih.', 30);
 
 --
 -- Indexes for dumped tables

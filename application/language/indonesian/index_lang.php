@@ -14,6 +14,11 @@ $lang['goods'] = 'barang';
     $lang['size'] = 'ukuran';
     $lang['price'] = 'harga';
     $lang['stock'] = 'stok';
+$lang['settings'] = 'pengaturan';
+    $lang['setting'] = 'pengaturan';
+    $lang['type'] = 'tipe';
+    $lang['message'] = 'pesan';
+    $lang['due_date'] = 'jatuh tempo';
 
 $lang['action'] = 'aksi';
 $lang['add'] = 'tambah';

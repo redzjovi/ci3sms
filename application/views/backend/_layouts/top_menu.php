@@ -39,6 +39,9 @@
                     <a href="<?= site_url('backend/barang'); ?>"><i class="fa fa-cubes"></i> <?= ucfirst(lang('goods')); ?></a>
                 </li>
                 <li>
+                    <a href="<?= site_url('backend/pengaturan'); ?>"><i class="fa fa-wrench"></i> <?= ucfirst(lang('settings')); ?></a>
+                </li>
+                <li>
                     <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
                 </li>
                 <li>
