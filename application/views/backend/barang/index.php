@@ -1,17 +1,17 @@
-<?php $this->load->view('backend/_layouts/header', ['title' => ucfirst(lang('customer'))]); ?>
+<?php $this->load->view('backend/_layouts/header', ['title' => ucfirst(lang('goods'))]); ?>
 <?php $this->load->view('backend/_layouts/top_menu'); ?>
 
 <div id="page-wrapper">
     <?php $this->load->view('backend/_partials/messages'); ?>
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="page-header"><?= ucfirst(lang('customer')); ?></h1>
+            <h1 class="page-header"><?= ucfirst(lang('goods')); ?></h1>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
             <?= anchor(
-                site_url('backend/pelanggan/create'),
+                site_url('backend/barang/create'),
                 ucfirst(lang('add')),
                 ['class' => 'btn btn-primary btn-sm']
             ); ?>
@@ -21,37 +21,35 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-default">
-                <div class="panel-heading"><?= ucfirst(lang('customer')); ?></div>
+                <div class="panel-heading"><?= ucfirst(lang('goods')); ?></div>
                 <div class="panel-body">
                     <table class="table table-bordered table-hover table-striped" id="table" width="100%">
                         <thead>
                             <tr>
                                 <th><?= ucfirst(lang('no')); ?></th>
-                                <th><?= ucfirst(lang('name')); ?></th>
-                                <th><?= ucfirst(lang('phone_number')); ?></th>
-                                <th><?= ucfirst(lang('handphone_number')); ?></th>
-                                <th><?= ucfirst(lang('address')); ?></th>
-                                <th><?= ucfirst(lang('email')); ?></th>
+                                <th><?= ucfirst(lang('product_name')); ?></th>
+                                <th><?= ucfirst(lang('size')); ?></th>
+                                <th><?= ucfirst(lang('price')); ?></th>
+                                <th><?= ucfirst(lang('stock')); ?></th>
                                 <th><?= ucfirst(lang('action')); ?></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($pelanggan->result() as $row) : ?>
+                            <?php foreach ($barang->result() as $row) : ?>
                                 <tr>
                                     <td></td>
-                                    <td><?= $row->nama; ?></td>
-                                    <td><?= $row->nomor_telepon; ?></td>
-                                    <td><?= $row->nomor_handphone; ?></td>
-                                    <td><?= $row->alamat; ?></td>
-                                    <td><?= $row->email; ?></td>
+                                    <td><?= $row->nama_barang; ?></td>
+                                    <td><?= $row->ukuran; ?></td>
+                                    <td><?= $row->harga; ?></td>
+                                    <td><?= $row->stok; ?></td>
                                     <td>
                                         <?= anchor(
-                                            site_url('backend/pelanggan/update/'.$row->id_pelanggan),
+                                            site_url('backend/barang/update/'.$row->id_barang),
                                             ucfirst(lang('edit')),
                                             ['class' => 'btn btn-sm btn-success']
                                         ); ?>
                                         <?= anchor(
-                                            site_url('backend/pelanggan/delete/'.$row->id_pelanggan),
+                                            site_url('backend/barang/delete/'.$row->id_barang),
                                             ucfirst(lang('delete')),
                                             ['class' => 'btn btn-danger btn-sm']
                                         ); ?>
@@ -71,7 +69,6 @@ $(function () {
     var t = $('#table').DataTable({
         'columns': [
             { 'orderable': false },
-            null,
             null,
             null,
             null,

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2017 at 08:06 AM
+-- Generation Time: Jun 05, 2017 at 08:09 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -43,6 +43,32 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `barang`
+--
+
+DROP TABLE IF EXISTS `barang`;
+CREATE TABLE `barang` (
+  `id_barang` int(11) NOT NULL,
+  `nama_barang` varchar(100) NOT NULL,
+  `ukuran` int(11) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `stok` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`id_barang`, `nama_barang`, `ukuran`, `harga`, `stok`) VALUES
+(1, 'Barang 1', 10, 10000, 10),
+(2, 'Barang 2', 10, 20000, 10),
+(3, 'Barang 3', 10, 30000, 10),
+(4, 'Barang 4', 10, 40000, 10),
+(5, 'Barang 5', 10, 50000, 10);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pelanggan`
 --
 
@@ -77,6 +103,60 @@ INSERT INTO `pelanggan` (`id_pelanggan`, `nama`, `nomor_telepon`, `nomor_handpho
 (14, 'Nama 14', '123', '1234', 'Alamat 14', 'email14@email.com'),
 (15, 'Nama 15', '123', '1234', 'Alamat 15', 'email15@email.com');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pembayaran`
+--
+
+DROP TABLE IF EXISTS `pembayaran`;
+CREATE TABLE `pembayaran` (
+  `id_pembayaran` int(11) NOT NULL,
+  `tanggal_pembayaran` datetime NOT NULL,
+  `total` int(11) NOT NULL,
+  `id_pembelian` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pembelian`
+--
+
+DROP TABLE IF EXISTS `pembelian`;
+CREATE TABLE `pembelian` (
+  `id_pembelian` int(11) NOT NULL,
+  `tanggal_pembelian` datetime NOT NULL,
+  `tanggal_jatuh_tempo` datetime NOT NULL,
+  `id_pelanggan` int(11) NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `kuantitas` int(11) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `status` enum('0','1') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengaturan`
+--
+
+DROP TABLE IF EXISTS `pengaturan`;
+CREATE TABLE `pengaturan` (
+  `id` int(11) NOT NULL,
+  `tipe` varchar(50) NOT NULL,
+  `pesan` text NOT NULL,
+  `jatuh_tempo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `pengaturan`
+--
+
+INSERT INTO `pengaturan` (`id`, `tipe`, `pesan`, `jatuh_tempo`) VALUES
+(1, 'peringatan_pembayaran', 'Kepada Bpk {nama},\n\nBatas waktu pembayaran tinggal {jumlah_hari} lagi. Segera bayar sebelum {tanggal_jatuh_tempo}.\n\nTerima kasih.', 30);
+
 --
 -- Indexes for dumped tables
 --
@@ -88,10 +168,34 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `barang`
+--
+ALTER TABLE `barang`
+  ADD PRIMARY KEY (`id_barang`);
+
+--
 -- Indexes for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`id_pelanggan`);
+
+--
+-- Indexes for table `pembayaran`
+--
+ALTER TABLE `pembayaran`
+  ADD PRIMARY KEY (`id_pembayaran`);
+
+--
+-- Indexes for table `pembelian`
+--
+ALTER TABLE `pembelian`
+  ADD PRIMARY KEY (`id_pembelian`);
+
+--
+-- Indexes for table `pengaturan`
+--
+ALTER TABLE `pengaturan`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -103,10 +207,25 @@ ALTER TABLE `pelanggan`
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `barang`
+--
+ALTER TABLE `barang`
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
   MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `pembelian`
+--
+ALTER TABLE `pembelian`
+  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `pengaturan`
+--
+ALTER TABLE `pengaturan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

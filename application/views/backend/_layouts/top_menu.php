@@ -33,8 +33,10 @@
                     <a href="<?= site_url('backend/admin'); ?>"><i class="fa fa-dashboard"></i> <?= ucfirst(lang('dashboard')); ?></a>
                 </li>
                 <li>
-                    <a href="<?= site_url('backend/pelanggan'); ?>"><i class="fa fa-users"></i> <?= ucfirst(lang('pelanggan')); ?></a>
                     <a href="<?= site_url('backend/pelanggan'); ?>"><i class="fa fa-users"></i> <?= ucfirst(lang('customer')); ?></a>
+                </li>
+                <li>
+                    <a href="<?= site_url('backend/barang'); ?>"><i class="fa fa-cubes"></i> <?= ucfirst(lang('goods')); ?></a>
                 </li>
                 <li>
                     <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>

@@ -1,4 +1,4 @@
-<?php $this->load->view('backend/_layouts/header'); ?>
+<?php $this->load->view('backend/_layouts/header', ['title' => 'Index']); ?>
 <?php $this->load->view('backend/_layouts/top_menu'); ?>
 
 <div id="page-wrapper">

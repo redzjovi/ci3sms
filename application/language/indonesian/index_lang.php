@@ -9,6 +9,11 @@ $lang['customer'] = 'pelanggan';
     $lang['handphone_number'] = 'nomor handphone';
     $lang['address'] = 'alamat';
     $lang['email'] = 'email';
+$lang['goods'] = 'barang';
+    $lang['product_name'] = 'nama barang';
+    $lang['size'] = 'ukuran';
+    $lang['price'] = 'harga';
+    $lang['stock'] = 'stok';
 
 $lang['action'] = 'aksi';
 $lang['add'] = 'tambah';
