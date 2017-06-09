@@ -77,6 +77,8 @@ class Pembelian extends CI_Controller
 
         if ($this->form_validation->run() === true) {
             $data = $this->input->post();
+            $data['tanggal_pembelian'] = datetime_from_format($data['tanggal_pembelian'], 'd/m/Y', 'Y-m-d');
+            $data['tanggal_jatuh_tempo'] = datetime_from_format($data['tanggal_jatuh_tempo'], 'd/m/Y', 'Y-m-d');
             $this->Pembelian_Model->update($id, $data);
             $this->session->set_flashdata('message_success', lang('data_update_success'));
             redirect('backend/pembelian');

@@ -40,8 +40,8 @@
                                     <td></td>
                                     <td><?= $row->nama_barang; ?></td>
                                     <td><?= $row->ukuran; ?></td>
-                                    <td><?= $row->harga; ?></td>
-                                    <td><?= $row->stok; ?></td>
+                                    <td><?= number_format($row->harga); ?></td>
+                                    <td><?= number_format($row->stok); ?></td>
                                     <td>
                                         <?= anchor(
                                             site_url('backend/barang/update/'.$row->id_barang),

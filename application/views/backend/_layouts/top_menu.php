@@ -42,6 +42,9 @@
                     <a href="<?= site_url('backend/pembelian'); ?>"><i class="fa fa-shopping-cart"></i> <?= ucfirst(lang('purchases')); ?></a>
                 </li>
                 <li>
+                    <a href="<?= site_url('backend/pembayaran'); ?>"><i class="fa fa-money"></i> <?= ucfirst(lang('payment')); ?></a>
+                </li>
+                <li>
                     <a href="<?= site_url('backend/pengaturan'); ?>"><i class="fa fa-wrench"></i> <?= ucfirst(lang('settings')); ?></a>
                 </li>
                 <li>

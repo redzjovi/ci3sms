@@ -27,7 +27,7 @@ $(function () {
     });
 
     $("#kuantitas").on('change keyup', function () {
-        $('#total').val( $('#harga').val() * $(this).val() );        
+        $('#total').val( $('#harga').val() * $(this).val() );
     });
 });
 </script>

@@ -1,11 +1,11 @@
-<?php $this->load->view('backend/_layouts/header', ['title' => ucfirst(lang('purchases'))]); ?>
+<?php $this->load->view('backend/_layouts/header', ['title' => ucfirst(lang('payment'))]); ?>
 <?php $this->load->view('backend/_layouts/top_menu'); ?>
 
 <div id="page-wrapper">
     <?php $this->load->view('backend/_partials/messages'); ?>
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="page-header"><?= ucfirst(lang('purchases')); ?></h1>
+            <h1 class="page-header"><?= ucfirst(lang('payment')); ?></h1>
         </div>
     </div>
     <div class="row">
@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-default">
-                <div class="panel-heading"><?= ucfirst(lang('purchases')); ?></div>
+                <div class="panel-heading"><?= ucfirst(lang('payment')); ?></div>
                 <div class="panel-body">
                     <table class="table table-bordered table-hover table-striped" id="table" width="100%">
                         <thead>
@@ -52,14 +52,9 @@
                                     <td><?= $status[$row->status]; ?></td>
                                     <td>
                                         <?= anchor(
-                                            site_url('backend/pembelian/update/'.$row->id_pembelian),
-                                            ucfirst(lang('edit')),
+                                            site_url('backend/pembayaran/history/'.$row->id_pembelian),
+                                            ucfirst(lang('history')),
                                             ['class' => 'btn btn-sm btn-success']
-                                        ); ?>
-                                        <?= anchor(
-                                            site_url('backend/pembelian/delete/'.$row->id_pembelian),
-                                            ucfirst(lang('delete')),
-                                            ['class' => 'btn btn-danger btn-sm']
                                         ); ?>
                                     </td>
                                 </tr>
