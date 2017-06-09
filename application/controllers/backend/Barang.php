@@ -35,6 +35,18 @@ class Barang extends CI_Controller
         redirect('backend/barang');
     }
 
+    public function find_by_pk()
+    {
+        if ($this->input->is_ajax_request()) {
+            $data = $this->db
+                ->from($this->Barang_Model->table)
+                ->where('id_barang', $this->input->get('id'))
+                ->get()->row_array();
+
+            echo json_encode($data);
+        }
+    }
+
     public function index()
     {
         $this->login_library->is_guest(true);

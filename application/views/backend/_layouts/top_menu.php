@@ -39,6 +39,9 @@
                     <a href="<?= site_url('backend/barang'); ?>"><i class="fa fa-cubes"></i> <?= ucfirst(lang('goods')); ?></a>
                 </li>
                 <li>
+                    <a href="<?= site_url('backend/pembelian'); ?>"><i class="fa fa-shopping-cart"></i> <?= ucfirst(lang('purchases')); ?></a>
+                </li>
+                <li>
                     <a href="<?= site_url('backend/pengaturan'); ?>"><i class="fa fa-wrench"></i> <?= ucfirst(lang('settings')); ?></a>
                 </li>
                 <li>
