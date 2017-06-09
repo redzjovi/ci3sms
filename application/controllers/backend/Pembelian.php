@@ -7,7 +7,8 @@ class Pembelian extends CI_Controller
         $this->load->model([
             'Barang_Model',
             'Pelanggan_Model',
-            'Pembelian_Model'
+            'Pembelian_Model',
+            'Pengaturan_Model'
         ]);
     }
 
@@ -34,8 +35,10 @@ class Pembelian extends CI_Controller
         }
 
         $params['barang'] = $this->db->get($this->Barang_Model->table)->result_array();
+        $params['jatuh_tempo'] = $this->Pengaturan_Model->find_by_tipe('peringatan_pembayaran')->jatuh_tempo;
         $params['pelanggan'] = $this->db->get($this->Pelanggan_Model->table)->result_array();
         $params['status'] = $this->Pembelian_Model->get_status();
+        $params['tanggal_jatuh_tempo'] = date('d/m/Y', strtotime(date('Y-m-d'). ' + '.$params['jatuh_tempo'].' days'));
         $this->load->view('backend/pembelian/create', $params);
     }
 

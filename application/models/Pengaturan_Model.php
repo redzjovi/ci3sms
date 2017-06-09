@@ -19,6 +19,11 @@ class Pengaturan_Model extends CI_Model
         $this->db->delete($this->table, ['id' => $id]);
     }
 
+    public function find_by_tipe($tipe)
+    {
+        return $this->db->from($this->table)->where('tipe', $tipe)->get()->row();
+    }
+
     public function update($id, $data)
     {
         $data = [

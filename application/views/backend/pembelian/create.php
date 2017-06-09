@@ -17,7 +17,7 @@
                     <div class="form-group">
                         <?= form_label(ucfirst(lang('purchase_date')).' (*)'); ?>
                         <div class="input-group date">
-                            <?= form_input('tanggal_pembelian', set_value('tanggal_pembelian'), array('class' => 'form-control', 'id' => 'tanggal_pembelian')); ?>
+                            <?= form_input('tanggal_pembelian', set_value('tanggal_pembelian', date('d/m/Y')), array('class' => 'form-control', 'id' => 'tanggal_pembelian')); ?>
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -27,7 +27,7 @@
                     <div class="form-group">
                         <?= form_label(ucfirst(lang('due_date')).' (*)'); ?>
                         <div class="input-group date">
-                            <?= form_input('tanggal_jatuh_tempo', set_value('tanggal_jatuh_tempo'), array('class' => 'form-control', 'id' => 'tanggal_jatuh_tempo')); ?>
+                            <?= form_input('tanggal_jatuh_tempo', set_value('tanggal_jatuh_tempo', $tanggal_jatuh_tempo), array('class' => 'form-control', 'id' => 'tanggal_jatuh_tempo')); ?>
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
