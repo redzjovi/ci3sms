@@ -45,6 +45,9 @@
                     <a href="<?= site_url('backend/pembayaran'); ?>"><i class="fa fa-money"></i> <?= ucfirst(lang('payment')); ?></a>
                 </li>
                 <li>
+                    <a href="<?= site_url('backend/laporan'); ?>"><i class="fa fa-table"></i> <?= ucfirst(lang('report')); ?></a>
+                </li>
+                <li>
                     <a href="<?= site_url('backend/pengaturan'); ?>"><i class="fa fa-wrench"></i> <?= ucfirst(lang('settings')); ?></a>
                 </li>
                 <li>
