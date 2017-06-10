@@ -5,12 +5,24 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Admin_Model');
+        $this->load->model('Barang_Model');
+        $this->load->model('Pelanggan_Model');
+        $this->load->model('Pembelian_Model');
     }
 
     public function index()
     {
         $this->login_library->is_guest(true);
-        $this->load->view('backend/admin/index');
+
+        $params['barang_jumlah'] = $this->db->select('COUNT(*) AS total')->from($this->Barang_Model->table)->get()->row()->total;
+        $params['pelanggan_jumlah'] = $this->db->select('COUNT(*) AS total')->from($this->Pelanggan_Model->table)->get()->row()->total;
+        $params['pembelian_jumlah'] = $this->db->select('COUNT(*) AS total')->from($this->Pembelian_Model->table)->get()->row()->total;
+        $params['pembelian_total'] = $this->db->select_sum('total')->from($this->Pembelian_Model->table)->get()->row()->total;
+        $params['pembelian_jumlah_paid'] = $this->db->select('COUNT(*) AS total')->from($this->Pembelian_Model->table)->where('status', '1')->get()->row()->total;
+        $params['pembelian_total_paid'] = $this->db->select_sum('total')->from($this->Pembelian_Model->table)->where('status', '1')->get()->row()->total;
+        $params['pembelian_jumlah_unpaid'] = $this->db->select('COUNT(*) AS total')->from($this->Pembelian_Model->table)->where('status', '0')->get()->row()->total;
+        $params['pembelian_total_unpaid'] = $this->db->select_sum('total')->from($this->Pembelian_Model->table)->where('status', '0')->get()->row()->total;
+        $this->load->view('backend/admin/index', $params);
     }
 
     public function login()
@@ -25,7 +37,7 @@ class Admin extends CI_Controller
             $this->session->set_userdata($data);
             redirect('backend/admin');
         }
-        
+
         $this->load->view('backend/admin/login');
     }
 

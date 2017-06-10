@@ -55,3 +55,4 @@ $lang['sign_in'] = 'masuk';
 $lang['start_date'] = 'tanggal awal';
 $lang['unpaid'] = 'belum lunas';
 $lang['username_or_password_invalid'] = 'username atau password tidak valid';
+$lang['view'] = 'lihat';
